@@ -158,6 +158,12 @@ class HtmlNbReader(object):
         r'<img src="data:(.*?);base64,([\s\S]*?)" />'
     )
 
+    def_image_svg_element = re.compile(
+        r'<!-- rnb-svg-begin (.*?)-->'
+        r'([\s\S]+?)'
+        r'<!-- rnb-svg-end -->'
+    )
+
     def __init__(self):
         self._nb = nbf.v4.new_notebook()
         self._count = 1
@@ -183,8 +189,12 @@ class HtmlNbReader(object):
         try:
             mime, data = next(iter(self.def_image_element.findall(html)))
         except StopIteration:
-            mime = 'text/plain'
-            data = 'IPYMD: Error reading image.'
+            try:
+                b64, data = next(iter(self.def_image_svg_element.findall(html)))
+
+            except StopIteration:
+                mime = 'text/plain'
+                data = 'IPYMD: Error reading image.'
         return mime, data
 
     @staticmethod
@@ -457,8 +467,11 @@ class NbHtmlWriter(object):
 
     @staticmethod
     def _format_image(mime, data):
-        return '<p><img src="data:{mime};base64,{data}" /></p>'.format(
-            mime=mime, data=data)
+        if mime == 'image/svg+xml':
+            return NbHtmlWriter._create_tag('svg', data, {'mime': mime})
+        else:
+            return '<p><img src="data:{mime};base64,{data}" /></p>'.format(
+                mime=mime, data=data)
 
     @staticmethod
     def _format_text_output(text):
