@@ -370,3 +370,4 @@ Look at the existing format implementations for more details.
 
   * Publish on pypi!
   * Your users will now be able to `pip install myformat`, then configure their Notebook to use your format with the name `my_format`.
+  
