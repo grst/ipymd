@@ -1,6 +1,16 @@
 [![Build Status](https://travis-ci.org/grst/ipymd.svg?branch=travis)](https://travis-ci.org/grst/ipymd)
 [![Coverage Status](https://coveralls.io/repos/grst/ipymd/badge.svg)](https://coveralls.io/r/grst/ipymd)
 
+# Scope of this fork
+This fork provides an RMarkdown content manager for Jupyter Notebook, *i.e.* it allows you to edit `.Rmd` documents
+as if they were notebooks in Jupyter. 
+
+Inputs are stored in Rmd, outputs in a corresponding `.nb.html` which attempts to be compatible with Rstudio. 
+
+Unless you are particularly interested in the `.nb.html` output, 
+you should probably use [mwouts/nbrmd](https://github.com/mwouts/nbrmd) instead, which is more actively developed. 
+It also supports storing cell outputs in a dedicated `.ipynb` file. 
+
 # Store Jupyter notebooks in markdown format. 
 This package provides an alternative content manager for jupyter.
 It allows to store notebooks in text-based formats, replacing the native json-based `.ipynb`. 
