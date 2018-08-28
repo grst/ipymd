@@ -61,7 +61,7 @@ There are two possibilities to use ipymd:
 2. **Integrated into your local jupyter installation**
     * Install ipymd
         ```shell
-        pip install ipymd
+        pip install  https://github.com/grst/ipymd/archive/master.zip
         ```
 
     * Open your `jupyter_notebook_config.py`. Here's how to find it:
