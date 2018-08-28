@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/rossant/ipymd.svg?branch=travis)](https://travis-ci.org/rossant/ipymd)
-[![Coverage Status](https://coveralls.io/repos/rossant/ipymd/badge.svg)](https://coveralls.io/r/rossant/ipymd)
+[![Build Status](https://travis-ci.org/grst/ipymd.svg?branch=travis)](https://travis-ci.org/grst/ipymd)
+[![Coverage Status](https://coveralls.io/repos/grst/ipymd/badge.svg)](https://coveralls.io/r/grst/ipymd)
 
 # Store Jupyter notebooks in markdown format. 
 This package provides an alternative content manager for jupyter.
@@ -47,7 +47,7 @@ There are two possibilities to use ipymd:
 
 1. **Within a virtual environment, for testing and developing**
     ```shell
-    git clone https://github.com/rossant/ipymd
+    git clone https://github.com/grst/ipymd
     make jupyter
     ```
     will setup a virtual environment and run a `jupyter notebook` instance with ipymd activated.
