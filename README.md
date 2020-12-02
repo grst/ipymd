@@ -9,7 +9,7 @@ Inputs are stored in Rmd, outputs in a corresponding `.nb.html` which attempts t
 
 **Unless you are particularly interested in the `.nb.html` output, 
 you should probably use [mwouts/jupytext](https://github.com/mwouts/jupytext) instead, which is more actively developed. 
-It also supports storing cell outputs in a dedicated `.ipynb` file. **
+It also supports storing cell outputs in a dedicated `.ipynb` file.**
 
 # Store Jupyter notebooks in markdown format. 
 This package provides an alternative content manager for jupyter.
